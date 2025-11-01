@@ -19,10 +19,10 @@ import bl from "../../public/pic/uil-book-alt.png";
 import { useState } from "react";
 
 export default function Home() {
-  let currentYear = new Date().getFullYear();
-  let [isMenuActive, SetIsMenuActive] =  useState(false);
+  const currentYear = new Date().getFullYear();
+  const [isMenuActive, SetIsMenuActive] =  useState(false);
 
-  let handleMenu = () => {
+  const handleMenu = () => {
     console.log(isMenuActive);
     SetIsMenuActive(prev => !prev);
   }
