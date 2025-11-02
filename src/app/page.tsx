@@ -32,10 +32,10 @@ export default function Home() {
   const [isMobile, setIsMobile] = useState<boolean | null>(null);
   useEffect(() => {
       const updateMenuState = () => {
-          if(window.innerWidth >= 768){
-              setIsMobile(false) // show menu on tablet and desktop
+          if(window.innerWidth <= 500){
+              setIsMobile(true) 
           }else{
-              setIsMobile(true); // hide menu initially on mobile
+              setIsMobile(false); 
           };
       };
       updateMenuState(); // check on load
