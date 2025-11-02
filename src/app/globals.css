@@ -231,14 +231,14 @@ p{
   @apply lg:leading-[3.5rem]
 }
 .main-body section div:nth-child(1) div:nth-child(2){
-  @apply place-self-end-safe absolute bottom-0 block space-y-5 md:rounded-tl-4xl px-2 pb-3 md:pb-4 md:px-0 md:pl-5 
+  @apply place-self-end-safe absolute bottom-0 block space-y-5 md:rounded-tl-4xl px-2 pb-5 md:pb-4 md:px-0 md:pl-5 
   font-semibold text-neutral-800 
 }
 .main-body section div:nth-child(1) div:nth-child(2) h4{
   @apply text-neutral-900 text-start 
 }
 .main-body section div:nth-child(1) div:nth-child(2) button{
-  @apply float-end mr-4 -mt-5 md:-mt-2 lg:-mt-[2rem]
+  @apply float-end mr-4 -mt-4 md:-mt-2 lg:-mt-[2rem]
 }
 
 .main-body section div:nth-of-type(2){

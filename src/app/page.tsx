@@ -6,6 +6,7 @@ import twitter from "../../public/logo/Twitter.png";
 import telegram from "../../public/logo/Telegram.png";
 import discord from "../../public/logo/Discord.png";
 import utilityPic from "../../public/pic/utility-pic.png";
+import utilityPicMobile from "../../public/pic/utility-pic-mobile.png";
 import teamPic1 from "../../public/pic/team-pic-1.png";
 import supportLogoPi from "../../public/pic/pi-network-logo.png";
 import supportLogoProvena from "../../public/pic/provena-logo.png";
@@ -16,7 +17,8 @@ import ll from "../../public/pic/uil-linkedin.png";
 import gl from "../../public/pic/uil-github.png";
 import ml from "../../public/pic/uil-medium-m.png";
 import bl from "../../public/pic/uil-book-alt.png";
-import { useState } from "react";
+
+import { useEffect, useState } from "react";
 
 export default function Home() {
   const currentYear = new Date().getFullYear();
@@ -26,6 +28,20 @@ export default function Home() {
     console.log(isMenuActive);
     SetIsMenuActive(prev => !prev);
   }
+
+  const [isMobile, setIsMobile] = useState<boolean | null>(null);
+  useEffect(() => {
+      const updateMenuState = () => {
+          if(window.innerWidth >= 768){
+              setIsMobile(false) // show menu on tablet and desktop
+          }else{
+              setIsMobile(true); // hide menu initially on mobile
+          };
+      };
+      updateMenuState(); // check on load
+      window.addEventListener("resize", updateMenuState);
+      return () => window.removeEventListener("resize", updateMenuState);
+  }, []);
 
   return (
     <>
@@ -127,7 +143,7 @@ export default function Home() {
 
           <div>
             <h2>zyrachain utilities</h2>
-            <Image className={"utility-pic"} src={utilityPic} alt="utility-img" loading="lazy" />
+            <Image className={"utility-pic"} src={isMobile ? utilityPicMobile : utilityPic} alt="utility-img" loading="lazy" />
           </div>
 
           <div>
