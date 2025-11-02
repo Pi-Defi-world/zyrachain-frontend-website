@@ -68,7 +68,7 @@ button p{
 }
 
 h1{
-  @apply text-xl md:text-4xl lg:text-5xl font-bold
+  @apply text-xl sm:text-3xl md:text-4xl lg:text-5xl font-bold
 }
 h2{
   @apply text-2xl sm:text-3xl md:text-4xl lg:text-5xl font-semibold text-center
@@ -216,7 +216,7 @@ p{
 .main-body section div:nth-child(1){
   background-image: url('../../public/pic/bg-image-box-1.png');
   background-repeat: no-repeat; background-position: center; background-size: cover;
-  @apply h-120 md:w-full place-self-center place-content-between relative rounded-4xl overflow-hidden
+  @apply h-120 w-full place-self-center place-content-between relative rounded-4xl overflow-hidden
   border-4 border-neutral-800
 }
 .main-body section div:nth-child(1) div{
