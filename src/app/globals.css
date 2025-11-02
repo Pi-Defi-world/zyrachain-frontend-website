@@ -107,7 +107,7 @@ p{
   background: #0a0a0a;
   border-color: #0a0a0a;
   @apply place-items-center place-content-center fixed top-0 w-[100%] place-self-center 
-  z-10 h-28 md:h-35 lg:h-38 border-0 
+  z-20 h-28 md:h-35 lg:h-38 border-0 
 }
 .header-head nav{
   background-image: url('../../public/pic/asfalt-dark.png');
