@@ -9,9 +9,7 @@ interface MotionWrapperProps extends MotionProps {
 }
 
 export default function MotionWrapper({
-  children,
-  className,
-  ...motionProps
+  children
 }: MotionWrapperProps) {
   return (
     <motion.div
