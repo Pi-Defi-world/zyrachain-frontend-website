@@ -1,5 +1,6 @@
 "use client";
 import Image from "next/image";
+import { StaticImageData } from "next/image";
 
 import logo1 from "../../public/logo/logo-named.png";
 import twitter from "../../public/logo/Twitter.png";
@@ -17,6 +18,16 @@ import ml from "../../public/pic/uil-medium-m.png";
 import bl from "../../public/pic/uil-book-alt.png";
 import middleImg from "../../public/pic/middle-img1.png";
 import MotionWrapper from "./motion/motion-wrapper";
+import zyrawalletPic from "../../public/pic/zyrawallet-pic.png";
+import zyrawallet from "../../public/pic/zyrawallet.png";
+import zyradexPic from "../../public/pic/zyradex-pic.png";
+import zyradex from "../../public/pic/zyradex.png";
+import zyraswapPic from "../../public/pic/zyraswap-pic.png";
+import zyraswap from "../../public/pic/zyraswap.png";
+import zyracoinPic from "../../public/pic/zyracoin-pic.png";
+import zyracoin from "../../public/pic/zyracoin.png";
+import zyrauserPic from "../../public/pic/zyrauser-pic.png";
+import zyrauser from "../../public/pic/zyrauser.png";
 
 const Motionimage = motion(Image);
 
@@ -25,12 +36,17 @@ import { useEffect, useState, useCallback } from "react";
 import { motion } from "framer-motion";
 const WEBSITE_LOADER_TIME = 2;
 
-const groupImgMobile: any = [
-  {up_m: require("../../public/pic/zyrawallet-pic.png"), up_d: require("../../public/pic/zyrawallet.png")},
-  {up_m: require("../../public/pic/zyradex-pic.png"), up_d: require("../../public/pic/zyradex.png")},
-  {up_m: require("../../public/pic/zyraswap-pic.png"), up_d: require("../../public/pic/zyraswap.png")},
-  {up_m: require("../../public/pic/zyracoin-pic.png"), up_d: require("../../public/pic/zyracoin.png")},
-  {up_m: require("../../public/pic/zyrauser-pic.png"), up_d: require("../../public/pic/zyrauser.png")}
+type GroupImg = {
+  up_m: StaticImageData;
+  up_d: StaticImageData;
+};
+
+const groupImgMobile: GroupImg[] = [
+  { up_m: zyrawalletPic, up_d: zyrawallet },
+  { up_m: zyradexPic, up_d: zyradex },
+  { up_m: zyraswapPic, up_d: zyraswap },
+  { up_m: zyracoinPic, up_d: zyracoin },
+  { up_m: zyrauserPic, up_d: zyrauser },
 ];
 
 export default function Home() {
