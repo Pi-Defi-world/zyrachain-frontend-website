@@ -234,7 +234,7 @@ export default function Home() {
               <div
                 className="img-container">
                 {
-                  groupImgMobile.map((item : any, index: number) => (
+                  groupImgMobile.map((item : GroupImg, index: number) => (
                     <Motionimage 
                       key={index} 
                       className={"utility-pic"} 
