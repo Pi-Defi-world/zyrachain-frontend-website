@@ -126,7 +126,7 @@ export default function Home() {
             <ul>
               <li><p>Docs</p></li>
               <li><p>News</p></li>
-              <li><p>$zyra</p></li>
+              <li><p>$Zyra</p></li>
             </ul>
             <ul>
               <li>
