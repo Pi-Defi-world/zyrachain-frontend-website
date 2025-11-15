@@ -29,11 +29,11 @@ import zyracoin from "../../public/pic/zyracoin.png";
 import zyrauserPic from "../../public/pic/zyrauser-pic.png";
 import zyrauser from "../../public/pic/zyrauser.png";
 
+import { motion } from "framer-motion";
 const Motionimage = motion.create(Image);
 
 import { useEffect, useState, useCallback } from "react";
 
-import { motion } from "framer-motion";
 import Link from "next/link";
 const WEBSITE_LOADER_TIME = 2;
 
@@ -53,11 +53,13 @@ const groupImgMobile: GroupImg[] = [
 export default function Home() {
   const [isLoading, setIsLoading] = useState<boolean>(true);
 
-  if(isLoading) {
-    setTimeout(() => {
+  useEffect(() => {
+    const timer = setTimeout(() => {
       setIsLoading(false);
     }, WEBSITE_LOADER_TIME * 1000);
-  }
+
+    return () => clearTimeout(timer);
+  }, []);
 
   const currentYear = new Date().getFullYear();
   const [isMenuActive, SetIsMenuActive] =  useState(false);
@@ -197,7 +199,7 @@ export default function Home() {
                 <article>
                  
                   <h4>
-                    Zyrachain envisions a decentralized ecosystem where innovators, creatorsxf  i, 
+                    Zyrachain envisions a decentralized ecosystem where innovators, creators, 
                     and pioneers collaborate to shape the future of Web3. Our goal is to empower 
                     individuals and communities globally giving them the tools, opportunities, 
                     and incentives to build, experience, and grow within a unified blockchain-powered network.
@@ -277,7 +279,7 @@ export default function Home() {
                 </article>
                 <article>
                   <h4>
-                    Zyrachain is more than just a brand it's a community-driven movement designed to elevate 
+                    Zyrachain is more than just a brand it&apos;s a community-driven movement designed to elevate 
                     Web3 engagement through collaboration, co-creation, and shared success.
                   </h4>
                 </article>
@@ -310,8 +312,6 @@ export default function Home() {
                   ))
                 }
               </div>
-              
-              {/* <Image className={"utility-pic"} src={isMobile ? utilityPicMobile : utilityPic} alt="utility-img" loading="lazy" /> */}
             </div>
           </MotionWrapper>
 
