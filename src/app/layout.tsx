@@ -12,10 +12,31 @@ const geistMono = Geist_Mono({
   subsets: ["latin"],
 });
 
+const useLogoX = "/logo/new-zyrachain-logo-1.png";
+
+
 export const metadata: Metadata = {
-  title: "Zyrachain",
-  description: "Zyrachain build on Pi",
+  metadataBase: new URL("https://zyrachain.org"), 
+
+  openGraph: {
+    title: "Zyrachain",
+    description: "Zyrachain built on Pi",
+    images: [
+      {
+        url: "/pic/banner-fg.png", 
+        width: 1200,
+        height: 630,
+      },
+    ],
+  },
+
+  icons: {
+    icon: useLogoX,
+    shortcut: useLogoX,
+    apple: useLogoX,
+  },
 };
+
 
 export default function RootLayout({
   children,

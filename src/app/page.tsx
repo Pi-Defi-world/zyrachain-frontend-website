@@ -29,11 +29,12 @@ import zyracoin from "../../public/pic/zyracoin.png";
 import zyrauserPic from "../../public/pic/zyrauser-pic.png";
 import zyrauser from "../../public/pic/zyrauser.png";
 
-const Motionimage = motion(Image);
+const Motionimage = motion.create(Image);
 
 import { useEffect, useState, useCallback } from "react";
 
 import { motion } from "framer-motion";
+import Link from "next/link";
 const WEBSITE_LOADER_TIME = 2;
 
 type GroupImg = {
@@ -106,7 +107,7 @@ export default function Home() {
         initial={{ scale: 0 }} 
         animate={{ scale: 1 }} 
         className={"w-full h-[100vh] place-content-center place-items-center relative"}>
-        <Image className={"size-20 md:size-40 lg:size-60 animate-bounce ease-in-out transition"} src={zLogoCustom} alt="zyrachain" loading="lazy"/>
+        <Image className={"size-20 md:size-30 lg:size-40 animate-bounce ease-in-out transition"} src={zLogoCustom} alt="zyrachain" loading="lazy"/>
       </motion.div>
     </> :
     <>
@@ -130,10 +131,14 @@ export default function Home() {
             </ul>
             <ul>
               <li>
-                <Image className={"icon-x"} src={telegram} alt="telegram" loading="lazy" />
+                 <Link href={"https://t.me/zyrachains"} target="_blank">
+                  <Image className={"icon-x"} src={telegram} alt="telegram" loading="lazy" />
+                </Link>
               </li>
               <li>
-                <Image className={"icon-x"} src={twitter} alt="twitter" loading="lazy" />
+                <Link href={"https://x.com/zyradex"} target="_blank">
+                  <Image className={"icon-x"} src={twitter} alt="twitter" loading="lazy" />
+                </Link>
               </li>
               <li>
                 <Image className={"icon-x icon-x-discord"} src={discord} alt="discord" loading="lazy" />
@@ -146,7 +151,7 @@ export default function Home() {
                 whileHover={{ scale: 1.1 }}
                 whileTap={{ scale: 0.95 }}
               >
-              <p>Start</p>
+              <p>WP</p>
             </motion.button>
             <div>
               <p onClick={handleMenu} className={isMenuActive ? "active-menu" : "inactive-menu"}></p>
@@ -159,6 +164,7 @@ export default function Home() {
             <li onClick={handleMenu}><p>Docs</p></li>
             <li onClick={handleMenu}><p>News</p></li>
             <li onClick={handleMenu}><p>$Zyra</p></li>
+            <li onClick={handleMenu}><p>Whitepaper</p></li>
           </ul>
         </div>
         
@@ -187,20 +193,33 @@ export default function Home() {
           <MotionWrapper>
             <div className="vision-mission">
               <h2>Vision and Mission</h2>
-              <h4>
-                Lorem ipsum dolor sit, amet consectetur adipisicing elit. Blanditiis, 
-                molestias totam corrupti provident sunt, repudiandae tempora iusto 
-                earum saepe porro ducimus itaque sequi eveniet fugiat quasi iste ut 
-                vitae eaque! Voluptatum soluta nostrum, non distinctio iste ratione impedit? 
-                Explicabo, quas. Tempore blanditiis quae unde rem excepturi totam, ab ipsam aliquid, 
-                libero sint accusantium iste reiciendis placeat! Ab, saepe! Repellat, earum beatae 
-                adipisci ipsa quisquam vel est molestiae dicta inventore tempore nobis repudiandae ab 
-                voluptatum dolor alias pariatur suscipit, debitis asperiores sequi deleniti eius quaerat. 
-                Officia adipisci, qui harum id molestiae eveniet. Explicabo neque saepe dicta consequatur 
-                fugiat fuga, voluptas suscipit vel minus eaque libero voluptates nostrum voluptatem 
-                repudiandae obcaecati rem molestiae repellendus eligendi consequuntur aspernatur vitae 
-                dolorem delectus. 
-              </h4>  
+              <div>
+                <article>
+                 
+                  <h4>
+                    Zyrachain envisions a decentralized ecosystem where innovators, creatorsxf  i, 
+                    and pioneers collaborate to shape the future of Web3. Our goal is to empower 
+                    individuals and communities globally giving them the tools, opportunities, 
+                    and incentives to build, experience, and grow within a unified blockchain-powered network.
+                  </h4>
+                </article>
+                <article>
+                  <h4>
+                    Our mission is to create a dynamic and interconnected environment 
+                    where users, KOLs, and ecosystem partners actively co-create value. 
+                    Through structured experience programs, transparent rewards, and 
+                    meaningful engagement, Zyrachain aims to:
+                  </h4>
+                  <ul>
+                    <li> Accelerate the adoption of decentralized products and services </li>
+                    <li> Foster user-generated growth through community-driven participation </li>
+                    <li> Build long-term collaboration with creators, KOLs, and project ambassadors </li>
+                    <li> Deliver real utility by converting experience points into tangible ecosystem benefits </li>
+                    <li> Strengthen the network effect across all Provena Labs sub-brands </li>
+                  </ul>
+                </article>
+
+              </div>  
             </div>
           </MotionWrapper>
 
@@ -209,22 +228,60 @@ export default function Home() {
               <h2>Eco-system</h2>
               <div>
                 <span>
-                  <h4>total user</h4>
+                  <h4>Total User</h4>
                   <h3>100,000 +</h3>
                 </span>
                 <span>
-                  <h4>products</h4>
+                  <h4>Products</h4>
                   <h3>3 +</h3>
                 </span>
                 <span>
-                  <h4>market capitalization</h4>
+                  <h4>Market Capitalization</h4>
                   <h3>2 billion +</h3>
                 </span>
                 <span>
-                  <h4>wallets downloads</h4>
+                  <h4>Wallets Downloads</h4>
                   <h3>2 million +</h3>
                 </span>
               </div>
+            </div>
+          </MotionWrapper>
+
+          <MotionWrapper>
+            <div className="vision-mission">
+              <h2>About Zyrachain</h2>
+              <div>
+                <article>
+                  <h4>
+                    Zyrachain is a next-generation decentralized ecosystem built to unify creators, 
+                    users, developers, and innovators under one collaborative framework. 
+                    Powered by Provena Labs, Zyrachain serves as the backbone for multiple 
+                    sub-brands including ZyraDEX, ZyraWallet, ZyraPay, Zyra, USDP, 
+                    and more offering a wide range of blockchain experiences from finance to social interaction.
+                  </h4>
+                </article>
+                <article>
+                  <h4>
+                      The platform leverages a multi-layer community structure that connects official teams, 
+                      sub-brand projects, KOLs, and everyday pioneers. Through this structure, Zyrachain 
+                      enables seamless communication, ecosystem participation, and decentralized growth.
+                  </h4>
+                </article>
+                <article>
+                  <h4>
+                    At its core, Zyrachain introduces the Provena Experience Points (PEP) system, 
+                    allowing participants to earn real rewards such as tokens, badges, NFTs, and 
+                    early access by completing tasks, promoting projects, and contributing to the community. 
+                    This creates a sustainable loop of engagement, where every contribution leads to meaningful value.
+                  </h4>
+                </article>
+                <article>
+                  <h4>
+                    Zyrachain is more than just a brand it's a community-driven movement designed to elevate 
+                    Web3 engagement through collaboration, co-creation, and shared success.
+                  </h4>
+                </article>
+              </div>  
             </div>
           </MotionWrapper>
 
@@ -331,8 +388,16 @@ export default function Home() {
         </div>
         <div>
           <div className="social-logo-box">
-            <span><Image className={"social-logo-1"} src={tl} alt="zyralogo" loading="lazy"/></span>
-            <span><Image className={"social-logo-1"} src={xl} alt="zyralogo" loading="lazy"/></span>
+            <span>
+              <Link href={"https://t.me/zyrachains"} target="_blank"> 
+                <Image className={"social-logo-1"} src={tl} alt="zyralogo" loading="lazy"/>
+              </Link>
+            </span>
+            <span>
+              <Link href={"https://x.com/zyradex"} target="_blank">
+                <Image className={"social-logo-1"} src={xl} alt="zyralogo" loading="lazy"/>
+              </Link>
+            </span>
             <span><Image className={"social-logo-1"} src={ll} alt="zyralogo" loading="lazy"/></span>
             <span><Image className={"social-logo-1"} src={gl} alt="zyralogo" loading="lazy"/></span>
             <span><Image className={"social-logo-1"} src={ml} alt="zyralogo" loading="lazy"/></span>
