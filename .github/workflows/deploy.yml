@@ -19,7 +19,7 @@ jobs:
           API_TOKEN_GITHUB: ${{ secrets.DEPLOY_TOKEN }}
         with:
           source-directory: '.'       
-          destination-github-username: 'junman140'
+          destination-github-username: 'Junman140'
           destination-repository-name: 'zyrachain'
           user-email: 'github-actions[bot]@users.noreply.github.com'
           user-name: 'GitHub Actions'

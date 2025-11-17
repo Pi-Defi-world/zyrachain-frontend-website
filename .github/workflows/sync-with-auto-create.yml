@@ -25,7 +25,7 @@ jobs:
           GITHUB_TOKEN: ${{ secrets.API_TOKEN_GITHUB }}
         run: |
           REPO_NAME="zyrachain"
-          OWNER="junman140"
+          OWNER="Junman140"
           
           # Check if repo exists
           if curl -s -H "Authorization: token $GITHUB_TOKEN" \
@@ -43,7 +43,7 @@ jobs:
           GITHUB_TOKEN: ${{ secrets.API_TOKEN_GITHUB }}
         run: |
           REPO_NAME="zyrachain"
-          OWNER="junman140"
+          OWNER="Junman140"
           
           echo "Creating repository $OWNER/$REPO_NAME..."
           curl -X POST \
@@ -58,7 +58,7 @@ jobs:
 
       - name: Push to destination (Vercel) repo
         env:
-          DESTINATION_REPO: "https://junman140:${{ secrets.API_TOKEN_GITHUB }}@github.com/junman140/zyrachain.git"
+          DESTINATION_REPO: "https://Junman140:${{ secrets.API_TOKEN_GITHUB }}@github.com/Junman140/zyrachain.git"
         run: |
           # Clone the repository
           git clone "$DESTINATION_REPO" --branch main --single-branch temp_zyra_dex || {
