@@ -104,6 +104,39 @@ export default function Home() {
     return () => window.removeEventListener("scroll", controlNavbar);
   }, [controlNavbar]);
 
+  // Force dark theme on homepage - override any theme changes from other pages
+  useEffect(() => {
+    const htmlElement = document.documentElement;
+    // Force dark class on HTML element
+    htmlElement.classList.remove('light', 'system');
+    htmlElement.classList.add('dark');
+    
+    // Prevent theme changes while on homepage
+    const observer = new MutationObserver((mutations) => {
+      mutations.forEach((mutation) => {
+        if (mutation.type === 'attributes' && mutation.attributeName === 'class') {
+          const target = mutation.target as HTMLElement;
+          if (target === htmlElement) {
+            // If theme class is removed or changed, force it back to dark
+            if (!target.classList.contains('dark') || target.classList.contains('light')) {
+              target.classList.remove('light', 'system');
+              target.classList.add('dark');
+            }
+          }
+        }
+      });
+    });
+
+    observer.observe(htmlElement, {
+      attributes: true,
+      attributeFilter: ['class']
+    });
+
+    return () => {
+      observer.disconnect();
+    };
+  }, []);
+
   return (
     isLoading ?
     <>
@@ -114,7 +147,7 @@ export default function Home() {
         <Image className={"size-20 md:size-30 lg:size-40 animate-bounce ease-in-out transition"} src={zLogoCustom} alt="zyrachain" loading="lazy"/>
       </motion.div>
     </> :
-    <>
+    <div className="homepage-forced-dark">
       <motion.header 
         initial={{ y: 0 }}
         animate={{ y: show ? 0 : "-1000%" }}
@@ -252,9 +285,9 @@ export default function Home() {
                 <Link href="/security" className="explore-nav-btn">
                   <p>Security</p>
                 </Link>
-                {/* <Link href="/support" className="explore-nav-btn">
+                <Link href="/support" className="explore-nav-btn">
                   <p>Support</p>
-                </Link> */}
+                </Link>
               </div>
             </div>
           </MotionWrapper>
@@ -478,6 +511,6 @@ export default function Home() {
           <p>ZYRATEAM @ {currentYear}. All rights reserved.</p>
         </div>
       </footer>
-    </>
+    </div>
   );
 }

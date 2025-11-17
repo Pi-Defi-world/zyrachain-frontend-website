@@ -14,7 +14,7 @@
   --accent-foreground: #ffffff;
 }
 
-[data-theme="light"] {
+.light {
   --background: #ffffff;
   --foreground: #171717;
   --card: #f9fafb;
@@ -26,6 +26,37 @@
   --primary-foreground: #ffffff;
   --accent: #fb923c;
   --accent-foreground: #ffffff;
+}
+
+.dark {
+  --background: #0a0a0a;
+  --foreground: #ededed;
+  --card: #1a1a1a;
+  --card-foreground: #ededed;
+  --border: #2a2a2a;
+  --muted: #1a1a1a;
+  --muted-foreground: #a0a0a0;
+  --primary: #fb923c;
+  --primary-foreground: #ffffff;
+  --accent: #fb923c;
+  --accent-foreground: #ffffff;
+}
+
+/* Force dark theme on homepage regardless of global theme */
+.homepage-forced-dark,
+.homepage-forced-dark * {
+  /* Override any light theme variables */
+  --background: #0a0a0a !important;
+  --foreground: #ededed !important;
+  --card: #1a1a1a !important;
+  --card-foreground: #ededed !important;
+  --border: #2a2a2a !important;
+  --muted: #1a1a1a !important;
+  --muted-foreground: #a0a0a0 !important;
+  --primary: #fb923c !important;
+  --primary-foreground: #ffffff !important;
+  --accent: #fb923c !important;
+  --accent-foreground: #ffffff !important;
 }
 
 @theme inline {
@@ -192,6 +223,11 @@ p{
 }
 .desktop-whitepaper-btn button{
   @apply block
+}
+
+/* Theme toggle container */
+.theme-toggle-container{
+  @apply flex items-center
 }
 
 /* Mobile menu toggle - hide on large screens */

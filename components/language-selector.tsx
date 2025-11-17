@@ -31,7 +31,7 @@ export function LanguageSelector() {
         title="Select language"
       >
         <Globe size={20} className="text-foreground" />
-        <span className="text-sm hidden sm:inline">{localeNames[currentLocale as keyof typeof localeNames]}</span>
+        {/* <span className="text-sm hidden sm:inline">{localeNames[currentLocale as keyof typeof localeNames]}</span> */}
       </button>
       
       {isOpen && (
