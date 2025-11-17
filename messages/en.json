@@ -1,0 +1,137 @@
+{
+  "common": {
+    "home": "Home",
+    "about": "About",
+    "features": "Features",
+    "contact": "Contact",
+    "roadmap": "Roadmap",
+    "security": "Security",
+    "support": "Support",
+    "whitepaper": "Whitepaper",
+    "wallet": "Wallet",
+    "token": "Token",
+    "dex": "DEX",
+    "docs": "Docs",
+    "news": "News",
+    "explore": "Explore",
+    "getStarted": "Get Started",
+    "launchApp": "Launch App"
+  },
+  "header": {
+    "nav": {
+      "wallet": "ZyraWallet",
+      "dex": "ZyraDEX",
+      "token": "$Zyra",
+      "whitepaper": "Whitepaper",
+      "docs": "Docs",
+      "news": "News"
+    }
+  },
+  "footer": {
+    "description": "Building the future of decentralized finance on Pi Network. Zyrachain powers ZyraWallet, ZyraDEX, and the $Zyra token ecosystem.",
+    "product": "Product",
+    "company": "Company",
+    "legal": "Legal",
+    "resources": "Resources",
+    "copyright": "ZYRATEAM @ {year}. All rights reserved.",
+    "social": {
+      "telegram": "Telegram",
+      "twitter": "Twitter",
+      "discord": "Discord",
+      "github": "GitHub",
+      "linkedin": "LinkedIn",
+      "medium": "Medium"
+    }
+  },
+  "home": {
+    "title": "The automated chain network on Pi",
+    "subtitle": "Zyrachain is the foundation chain of zyra ecosystem, designed to power and connect all Zyra products.",
+    "vision": {
+      "title": "Vision and Mission",
+      "visionText": "Zyrachain envisions a decentralized ecosystem where innovators, creators, and pioneers collaborate to shape the future of Web3. Our goal is to empower individuals and communities globally giving them the tools, opportunities, and incentives to build, experience, and grow within a unified blockchain-powered network.",
+      "missionText": "Our mission is to create a dynamic and interconnected environment where users, KOLs, and ecosystem partners actively co-create value. Through structured experience programs, transparent rewards, and meaningful engagement, Zyrachain aims to:",
+      "missionPoints": [
+        "Accelerate the adoption of decentralized products and services",
+        "Foster user-generated growth through community-driven participation",
+        "Build long-term collaboration with creators, KOLs, and project ambassadors",
+        "Deliver real utility by converting experience points into tangible ecosystem benefits",
+        "Strengthen the network effect across all Provena Labs sub-brands"
+      ]
+    },
+    "ecosystem": {
+      "title": "Eco-system",
+      "totalUsers": "Total User",
+      "products": "Products",
+      "marketCap": "Market Capitalization",
+      "walletDownloads": "Wallets Downloads"
+    },
+    "about": {
+      "title": "About Zyrachain",
+      "text1": "Zyrachain is a next-generation decentralized ecosystem built to unify creators, users, developers, and innovators under one collaborative framework. Powered by Provena Labs, Zyrachain serves as the backbone for multiple sub-brands including ZyraDEX, ZyraWallet, ZyraPay, Zyra, USDP, and more offering a wide range of blockchain experiences from finance to social interaction.",
+      "text2": "The platform leverages a multi-layer community structure that connects official teams, sub-brand projects, KOLs, and everyday pioneers. Through this structure, Zyrachain enables seamless communication, ecosystem participation, and decentralized growth.",
+      "text3": "At its core, Zyrachain introduces the Provena Experience Points (PEP) system, allowing participants to earn real rewards such as tokens, badges, NFTs, and early access by completing tasks, promoting projects, and contributing to the community. This creates a sustainable loop of engagement, where every contribution leads to meaningful value.",
+      "text4": "Zyrachain is more than just a brand it's a community-driven movement designed to elevate Web3 engagement through collaboration, co-creation, and shared success."
+    },
+    "utilities": {
+      "title": "zyrachain utilities"
+    },
+    "team": {
+      "title": "Core team",
+      "subtitle": "A dedicated team, constantly improving what we have to offer."
+    },
+    "supports": {
+      "title": "supports"
+    }
+  },
+  "wallet": {
+    "title": "ZyraWallet",
+    "subtitle": "Secure wallet for storing, managing, and transferring Zyra tokens and Pi assets seamlessly across the ecosystem.",
+    "features": {
+      "title": "Features",
+      "secure": {
+        "title": "Secure Storage",
+        "description": "Your assets are protected with industry-leading security measures."
+      },
+      "manage": {
+        "title": "Easy Management",
+        "description": "Intuitive interface for managing all your digital assets."
+      },
+      "transfer": {
+        "title": "Fast Transfers",
+        "description": "Send and receive tokens quickly on the Pi Network."
+      }
+    }
+  },
+  "token": {
+    "title": "$Zyra Token",
+    "subtitle": "The native token of Zyrachain — powering transactions, staking, governance, and ecosystem utilities.",
+    "tokenomics": {
+      "title": "Tokenomics",
+      "description": "Learn about the distribution and utility of $Zyra token."
+    }
+  },
+  "dex": {
+    "title": "ZyraDEX",
+    "subtitle": "Decentralized exchange built for speed, liquidity, and transparency — enabling peer-to-peer trading on Pi.",
+    "features": {
+      "title": "Features",
+      "speed": {
+        "title": "Lightning Fast",
+        "description": "Trade with minimal latency and high throughput."
+      },
+      "liquidity": {
+        "title": "Deep Liquidity",
+        "description": "Access to deep liquidity pools for optimal trading."
+      },
+      "transparency": {
+        "title": "Fully Transparent",
+        "description": "All transactions are on-chain and verifiable."
+      }
+    }
+  },
+  "whitepaper": {
+    "title": "Whitepaper",
+    "subtitle": "Learn about Zyrachain's vision, technology, and roadmap."
+  }
+}
+

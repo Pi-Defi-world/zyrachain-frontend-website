@@ -2,32 +2,32 @@
 import Image from "next/image";
 import { StaticImageData } from "next/image";
 
-import logo1 from "../../public/logo/logo-named.png";
-import twitter from "../../public/logo/Twitter.png";
-import telegram from "../../public/logo/Telegram.png";
-import discord from "../../public/logo/Discord.png";
-import teamPic1 from "../../public/pic/team-pic-1.png";
-import supportLogoPi from "../../public/pic/pi-network-logo.png";
-import supportLogoProvena from "../../public/pic/provena-logo.png";
-import zLogoCustom from "../../public/pic/z-logo-custom.png";
-import xl from "../../public/pic/uil-tumblr-square.png";
-import tl from "../../public/pic/uil-telegram.png";
-import ll from "../../public/pic/uil-linkedin.png";
-import gl from "../../public/pic/uil-github.png";
-import ml from "../../public/pic/uil-medium-m.png";
-import bl from "../../public/pic/uil-book-alt.png";
-import middleImg from "../../public/pic/middle-img1.png";
-import MotionWrapper from "./motion/motion-wrapper";
-import zyrawalletPic from "../../public/pic/zyrawallet-pic.png";
-import zyrawallet from "../../public/pic/zyrawallet.png";
-import zyradexPic from "../../public/pic/zyradex-pic.png";
-import zyradex from "../../public/pic/zyradex.png";
-import zyraswapPic from "../../public/pic/zyraswap-pic.png";
-import zyraswap from "../../public/pic/zyraswap.png";
-import zyracoinPic from "../../public/pic/zyracoin-pic.png";
-import zyracoin from "../../public/pic/zyracoin.png";
-import zyrauserPic from "../../public/pic/zyrauser-pic.png";
-import zyrauser from "../../public/pic/zyrauser.png";
+import logo1 from "@public/logo/logo-named.png";
+import twitter from "@public/logo/Twitter.png";
+import telegram from "@public/logo/Telegram.png";
+import discord from "@public/logo/Discord.png";
+import teamPic1 from "@public/pic/team-pic-1.png";
+import supportLogoPi from "@public/pic/pi-network-logo.png";
+import supportLogoProvena from "@public/pic/provena-logo.png";
+import zLogoCustom from "@public/pic/z-logo-custom.png";
+import xl from "@public/pic/uil-tumblr-square.png";
+import tl from "@public/pic/uil-telegram.png";
+import ll from "@public/pic/uil-linkedin.png";
+import gl from "@public/pic/uil-github.png";
+import ml from "@public/pic/uil-medium-m.png";
+import bl from "@public/pic/uil-book-alt.png";
+import middleImg from "@public/pic/middle-img1.png";
+import MotionWrapper from "../motion/motion-wrapper";
+import zyrawalletPic from "@public/pic/zyrawallet-pic.png";
+import zyrawallet from "@public/pic/zyrawallet.png";
+import zyradexPic from "@public/pic/zyradex-pic.png";
+import zyradex from "@public/pic/zyradex.png";
+import zyraswapPic from "@public/pic/zyraswap-pic.png";
+import zyraswap from "@public/pic/zyraswap.png";
+import zyracoinPic from "@public/pic/zyracoin-pic.png";
+import zyracoin from "@public/pic/zyracoin.png";
+import zyrauserPic from "@public/pic/zyrauser-pic.png";
+import zyrauser from "@public/pic/zyrauser.png";
 
 import { motion} from "framer-motion";
 const MotionImage = motion.create(Image);
@@ -36,7 +36,7 @@ import { useEffect, useState, useCallback } from "react";
 
 import Link from "next/link";
 
-import RandomMover from "./components/random-mover";
+import RandomMover from "../components/random-mover";
 const WEBSITE_LOADER_TIME = 0;
 
 type GroupImg = {
@@ -126,13 +126,33 @@ export default function Home() {
           <div>
             <Image className={"img"} src={logo1} alt="logo-text" loading="lazy" />
           </div>
+          
+          {/* Desktop Navigation Menu - Hidden on small screens */}
+          <div className="desktop-nav-menu">
+            <ul>
+              <li>
+                <Link href="/wallet"><p>ZyraWallet</p></Link>
+              </li>
+              <li>
+                <Link href="/dex"><p>ZyraDEX</p></Link>
+              </li>
+              <li>
+                <Link href="/token"><p>$Zyra Token</p></Link>
+              </li>
+              <li>
+                <Link href="/features"><p>Features</p></Link>
+              </li>
+              <li>
+                <Link href="/roadmap"><p>Roadmap</p></Link>
+              </li>
+              <li>
+                <Link href="/whitepaper"><p>Whitepaper</p></Link>
+              </li>
+            </ul>
+          </div>
+          
           <span></span>
           <div>
-            <ul>
-              <li><p>Docs</p></li>
-              <li><p>News</p></li>
-              <li><p>$Zyra</p></li>
-            </ul>
             <ul>
               <li>
                  <Link href={"https://t.me/zyrachains"} target="_blank">
@@ -150,11 +170,13 @@ export default function Home() {
             </ul>
           </div>
           <span></span>
-          <div>
+          <div style={{ display: 'flex', alignItems: 'center', gap: '0.5rem' }}>
+            <Link href="/whitepaper" className="desktop-whitepaper-btn">
               <button>
                 <p>Whitepaper</p>
               </button>
-            <div>
+            </Link>
+            <div className="mobile-menu-toggle">
               <p onClick={handleMenu} className={isMenuActive ? "active-menu" : "inactive-menu"}></p>
             </div>
           </div>
@@ -162,10 +184,16 @@ export default function Home() {
         
         <div className={isMenuActive ? "menu-option-open" : "menu-option-close" }>
           <ul>
-            <li onClick={handleMenu}><p>Docs</p></li>
-            <li onClick={handleMenu}><p>News</p></li>
-            <li onClick={handleMenu}><p>$Zyra</p></li>
-            <li onClick={handleMenu}><p>Whitepaper</p></li>
+            <li onClick={handleMenu}><Link href="/wallet"><p>ZyraWallet</p></Link></li>
+            <li onClick={handleMenu}><Link href="/dex"><p>ZyraDEX</p></Link></li>
+            <li onClick={handleMenu}><Link href="/token"><p>$Zyra Token</p></Link></li>
+            <li onClick={handleMenu}><Link href="/features"><p>Features</p></Link></li>
+            <li onClick={handleMenu}><Link href="/roadmap"><p>Roadmap</p></Link></li>
+            <li onClick={handleMenu}><Link href="/whitepaper"><p>Whitepaper</p></Link></li>
+            <li onClick={handleMenu}><Link href="/about"><p>About Us</p></Link></li>
+            <li onClick={handleMenu}><Link href="/contact"><p>Contact</p></Link></li>
+            <li onClick={handleMenu}><Link href="/security"><p>Security</p></Link></li>
+            <li onClick={handleMenu}><Link href="/support"><p>Support</p></Link></li>
           </ul>
         </div>
         
@@ -184,9 +212,49 @@ export default function Home() {
               <Image className={"middle-pic"} src={middleImg} alt="middle logo pic 1" />
               <div>
                 <h4>Zyrachain is the foundation chain of zyra ecosystem, designed to power and connect all Zyra products.</h4>
-                <button>
-                  <p>Explore</p>
-                </button>
+                <Link href="/features">
+                  <button>
+                    <p>Explore</p>
+                  </button>
+                </Link>
+              </div>
+            </div>
+          </MotionWrapper>
+
+          <MotionWrapper>
+            <div className="vision-mission" style={{ padding: '2rem 0' }}>
+              <h2 style={{ marginBottom: '2rem', textAlign: 'center' }}>Explore Zyrachain</h2>
+              <div className="explore-nav-grid">
+                <Link href="/wallet" className="explore-nav-btn">
+                  <p>ZyraWallet</p>
+                </Link>
+                <Link href="/dex" className="explore-nav-btn">
+                  <p>ZyraDEX</p>
+                </Link>
+                <Link href="/token" className="explore-nav-btn">
+                  <p>$Zyra Token</p>
+                </Link>
+                <Link href="/features" className="explore-nav-btn">
+                  <p>Features</p>
+                </Link>
+                <Link href="/whitepaper" className="explore-nav-btn">
+                  <p>Whitepaper</p>
+                </Link>
+                <Link href="/roadmap" className="explore-nav-btn">
+                  <p>Roadmap</p>
+                </Link>
+                <Link href="/about" className="explore-nav-btn">
+                  <p>About Us</p>
+                </Link>
+                <Link href="/contact" className="explore-nav-btn">
+                  <p>Contact</p>
+                </Link>
+                <Link href="/security" className="explore-nav-btn">
+                  <p>Security</p>
+                </Link>
+                {/* <Link href="/support" className="explore-nav-btn">
+                  <p>Support</p>
+                </Link> */}
               </div>
             </div>
           </MotionWrapper>
@@ -216,7 +284,7 @@ export default function Home() {
                     <li> Foster user-generated growth through community-driven participation </li>
                     <li> Build long-term collaboration with creators, KOLs, and project ambassadors </li>
                     <li> Deliver real utility by converting experience points into tangible ecosystem benefits </li>
-                    <li> Strengthen the network effect across all Provena Labs sub-brands </li>
+                    <li> Strengthen the network effect across all Zyrachain products and services </li>
                   </ul>
                 </article>
 
@@ -256,9 +324,9 @@ export default function Home() {
                   <h4>
                     Zyrachain is a next-generation decentralized ecosystem built to unify creators, 
                     users, developers, and innovators under one collaborative framework. 
-                    Powered by Provena Labs, Zyrachain serves as the backbone for multiple 
-                    sub-brands including ZyraDEX, ZyraWallet, ZyraPay, Zyra, USDP, 
-                    and more offering a wide range of blockchain experiences from finance to social interaction.
+                    Zyrachain serves as the backbone for multiple 
+                    products including ZyraDEX, ZyraWallet, and $Zyra token, 
+                    offering a wide range of blockchain experiences from finance to DeFi.
                   </h4>
                 </article>
                 <article>
@@ -292,23 +360,27 @@ export default function Home() {
               <div
                 className="img-container">
                 {
-                  groupImgMobile.map((item : GroupImg, index: number) => (
-                    <MotionImage 
-                      key={index} 
-                      className={"utility-pic"} 
-                      src={isMobile ?  item.up_m : item.up_d} 
-                      alt="utility-img" loading="lazy"
-                      initial={{ y: 150, opacity: 0 }}
-                      whileInView={{y: 0, opacity: 1}} 
-                      transition={{
-                        duration: 0.2,
-                        delay: 0.2,
-                        type: "spring",
-                        stiffness: 100
-                      }}
-                      animate={{ scale: 1 }}
-                    />
-                  ))
+                  groupImgMobile.map((item : GroupImg, index: number) => {
+                    const routes = ['/wallet', '/dex', '/dex', '/token', '/coming-soon'];
+                    return (
+                      <Link key={index} href={routes[index] || '#'}>
+                        <MotionImage 
+                          className={"utility-pic cursor-pointer hover:opacity-90 transition-opacity"} 
+                          src={isMobile ?  item.up_m : item.up_d} 
+                          alt="utility-img" loading="lazy"
+                          initial={{ y: 150, opacity: 0 }}
+                          whileInView={{y: 0, opacity: 1}} 
+                          transition={{
+                            duration: 0.2,
+                            delay: 0.2,
+                            type: "spring",
+                            stiffness: 100
+                          }}
+                          animate={{ scale: 1 }}
+                        />
+                      </Link>
+                    );
+                  })
                 }
               </div>
             </div>

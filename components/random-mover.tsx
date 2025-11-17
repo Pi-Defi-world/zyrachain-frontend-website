@@ -1,5 +1,5 @@
 import { motion, useAnimation } from "framer-motion";
-import stratalogo from "../../../public/pic/bg-strata-logo.png";
+import stratalogo from "@/public/pic/bg-strata-logo.png";
 import { useEffect, useRef } from "react";
 import Image from "next/image";
 const MotionImage = motion.create(Image);

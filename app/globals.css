@@ -1,23 +1,47 @@
 @import "tailwindcss";
 
 :root {
-  /* --background: #ffffff; */
   --background: #0a0a0a;
+  --foreground: #ededed;
+  --card: #1a1a1a;
+  --card-foreground: #ededed;
+  --border: #2a2a2a;
+  --muted: #1a1a1a;
+  --muted-foreground: #a0a0a0;
+  --primary: #fb923c;
+  --primary-foreground: #ffffff;
+  --accent: #fb923c;
+  --accent-foreground: #ffffff;
+}
+
+[data-theme="light"] {
+  --background: #ffffff;
   --foreground: #171717;
+  --card: #f9fafb;
+  --card-foreground: #171717;
+  --border: #e5e7eb;
+  --muted: #f3f4f6;
+  --muted-foreground: #6b7280;
+  --primary: #fb923c;
+  --primary-foreground: #ffffff;
+  --accent: #fb923c;
+  --accent-foreground: #ffffff;
 }
 
 @theme inline {
   --color-background: var(--background);
   --color-foreground: var(--foreground);
+  --color-card: var(--card);
+  --color-card-foreground: var(--card-foreground);
+  --color-border: var(--border);
+  --color-muted: var(--muted);
+  --color-muted-foreground: var(--muted-foreground);
+  --color-primary: var(--primary);
+  --color-primary-foreground: var(--primary-foreground);
+  --color-accent: var(--accent);
+  --color-accent-foreground: var(--accent-foreground);
   --font-sans: var(--font-geist-sans);
   --font-mono: var(--font-geist-mono);
-}
-
-@media (prefers-color-scheme: dark) {
-  :root {
-    --background: #0a0a0a;
-    --foreground: #ededed;
-  }
 }
 img,
 span,
@@ -55,7 +79,7 @@ body {
   background: var(--background);
   color: var(--foreground);
   font-family: Arial, Helvetica, sans-serif;
-  @apply block 
+  @apply block transition-colors duration-300
 }
 button{
   @apply bg-orange-400 px-4 rounded-md border border-white cursor-pointer h-8 md:h-9 text-center
@@ -109,10 +133,10 @@ p{
   z-20 h-28 md:h-35 lg:h-38
 }
 .header-head nav{
-  background-image: url('../../public/pic/asfalt-dark.png');
+  background-image: url('/pic/asfalt-dark.png');
   background-repeat: no-repeat; background-position: center; background-size: cover;
   @apply bg-white flex place-items-center place-content-between px-6 border-2 border-neutral-800 lg:border-0
-  md:px-4 md:place-content-evenly h-15 md:h-18 lg:h-20 w-[90%] sm:w-[85%] place-self-center rounded-lg 
+  md:px-4 h-15 md:h-18 lg:h-20 w-[90%] sm:w-[85%] place-self-center rounded-lg 
 }
 .header-head nav div .img{
   @apply h-8 md:h-10 w-fit md:w-50 lg:w-fit cursor-pointer hover:scale-95 transition delay-300 ease-in-out
@@ -120,44 +144,61 @@ p{
 .header-head nav span{
   @apply bg-gray-100 h-6 w-1 md:h-8 md:w-1.5 lg:h-10 lg:w-2 rounded-t-lg rounded-b-lg mx-2 lg:mx-4
 }
+/* Desktop Navigation Menu */
+.desktop-nav-menu{
+  @apply hidden lg:flex
+}
+.desktop-nav-menu ul{
+  @apply flex items-center gap-x-4 lg:gap-x-6
+}
+.desktop-nav-menu ul li{
+  @apply place-items-center place-content-center
+}
+.desktop-nav-menu ul li p{
+  @apply font-medium cursor-pointer hover:font-bold hover:text-orange-500 text-sm lg:text-base
+}
+
+/* Separator spans - show on large screens */
 .header-head nav span:nth-of-type(1),
 .header-head nav span:nth-of-type(2){
-  @apply hidden md:block
+  @apply hidden lg:block
 }
-.header-head nav div:nth-child(3){
-  @apply hidden sm:flex place-content-end md:place-content-between md:w-full lg:w-150    
+
+/* Social icons container */
+.header-head nav div:nth-child(4){
+  @apply hidden sm:flex place-content-end lg:place-content-center
 }
-.header-head nav div:nth-child(3) ul{
+.header-head nav div:nth-child(4) ul{
   @apply flex gap-x-2 lg:gap-x-4
 }
-.header-head nav div ul:nth-child(1){
-  @apply sm:hidden md:flex gap-x-1.5 lg:gap-x-4
-}
-.header-head nav div ul:nth-child(1) li{
-  @apply place-items-center place-content-center w-fit lg:w-14 
-}
-.header-head nav div ul:nth-child(1) li p{
-  @apply font-medium cursor-pointer hover:font-bold hover:text-orange-500 
-}
-.header-head nav div ul:nth-child(2){
-  @apply hidden md:flex
-}
-.header-head nav div ul:nth-child(2) li{
+.header-head nav div:nth-child(4) ul li{
   @apply bg-gray-200 rounded-md p-1 place-items-center h-fit cursor-pointer
 }
-.header-head nav div ul:nth-child(2) li .icon-x{
+.header-head nav div:nth-child(4) ul li .icon-x{
   @apply w-6 h-6 lg:w-8 lg:h-8 hover:scale-90
 }
-.header-head nav div ul:nth-child(2) li .icon-x-discord{
+.header-head nav div:nth-child(4) ul li .icon-x-discord{
   @apply w-8 lg:w-10 
 }
-.header-head nav div:nth-child(5) button{
-  @apply hidden md:block
+
+/* Right side container (Whitepaper button + Mobile menu) */
+.header-head nav div:nth-child(6){
+  @apply flex items-center gap-2
 }
-.header-head nav div:nth-child(5) div{
-  @apply block md:hidden
+
+/* Desktop Whitepaper button - hide on mobile */
+.desktop-whitepaper-btn{
+  @apply hidden lg:block
 }
-.header-head nav div:nth-child(5) div p{
+.desktop-whitepaper-btn button{
+  @apply block
+}
+
+/* Mobile menu toggle - hide on large screens */
+.mobile-menu-toggle{
+  @apply block lg:hidden
+}
+.mobile-menu-toggle p{
   @apply h-1 w-6 rounded-lg relative
 }
 .inactive-menu{
@@ -166,7 +207,7 @@ p{
 .active-menu{
   @apply bg-transparent
 }
-.header-head nav div:nth-child(5) div p::before{
+.mobile-menu-toggle p::before{
   content: "";
   @apply bg-neutral-900 rounded-lg absolute h-1 w-5  
 }
@@ -176,7 +217,7 @@ p{
 .active-menu::before{
   @apply bg-transparent rotate-45 top-0
 }
-.header-head nav div:nth-child(5) div p::after{
+.mobile-menu-toggle p::after{
   content: "";
   @apply bg-neutral-900 rounded-lg absolute h-1 w-5  
 }
@@ -188,16 +229,15 @@ p{
 }
 .header-head .overlay-open{
   @apply bg-neutral-900 opacity-90 w-[100%] top-[6rem] h-[100vh] py-4  
-  absolute place-items-end pr-[1.5rem] sm:pr-[3rem]
-  md:hidden 
+  fixed place-items-end pr-[1.5rem] sm:pr-[3rem] left-0 lg:hidden
 }
 .header-head .overlay-close{
   @apply hidden
 }
 .header-head .menu-option-open{
-  @apply bg-black block absolute right-[1.5rem] sm:right-[3rem] top-[6rem] 
-  z-10 h-fit py-2 w-45 sm:w-70 rounded-2xl pl-[1.5rem] 
-  sm:pl-[2rem] place-content-center border border-gray-50 
+  @apply bg-black block fixed right-[1.5rem] sm:right-[3rem] top-[6rem] 
+  z-30 h-fit py-2 w-45 sm:w-70 rounded-2xl pl-[1.5rem] 
+  sm:pl-[2rem] place-content-center border border-gray-50 lg:hidden
 }
 .header-head .menu-option-close{
   @apply hidden
@@ -212,6 +252,42 @@ p{
   @apply my-1 text-gray-50
 }
 
+/* Explore Section Navigation Buttons */
+.explore-nav-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+  gap: 1rem;
+  max-width: 1200px;
+  margin: 0 auto;
+  padding: 0 1rem;
+}
+
+.explore-nav-btn {
+  width: 100%;
+  padding: 1rem;
+  background: var(--primary, #fb923c);
+  color: white;
+  border: none;
+  border-radius: 8px;
+  cursor: pointer;
+  font-size: 1rem;
+  font-weight: 600;
+  transition: all 0.3s ease;
+  text-decoration: none;
+  display: block;
+}
+
+.explore-nav-btn:hover {
+  opacity: 0.9;
+  transform: translateY(-2px);
+  box-shadow: 0 4px 12px rgba(251, 146, 60, 0.3);
+}
+
+.explore-nav-btn p {
+  margin: 0;
+  color: white;
+}
+
 /* Main  -> Contents*/
 .main-body{
   @apply place-items-center my-[6.5rem] md:my-[9rem] lg:my-[10rem] relative 
@@ -220,13 +296,13 @@ p{
   @apply py-[1rem] md:py-0 w-[90%] sm:w-[85%] place-self-center block space-y-[5rem] lg:space-y-[10rem] 
 }
 .main-body section .banner-img{
-  background-image: url('../../public/pic/asfalt-dark.png');
+  background-image: url('/pic/asfalt-dark.png');
   background-repeat: no-repeat; background-position: center; background-size: cover;
   @apply h-120 sm:h-150 md:h-120 w-full place-self-center place-content-between relative rounded-4xl overflow-hidden
   border-2 border-neutral-800 md:border-0 cursor-pointer 
 }
 .banner-img div{
-  background-image: url('../../public/pic/asfalt-dark.png');
+  background-image: url('/pic/asfalt-dark.png');
   background-repeat: no-repeat; background-position: center; background-size: cover;
   @apply bg-white sm:w-[100%] md:w-100 h-fit px-2 py-2 md:py-4 border-2 md:border-4 border-gray-200
   
@@ -285,7 +361,7 @@ p{
   md:gap-x-4 md:gap-y-4 lg:gap-x-6 lg:gap-y-10 place-self-center place-items-center transition delay-300 ease-in-out
 }
 .eco-system div span{
-  background-image: url('../../public/pic/asfalt-dark.png');
+  background-image: url('/pic/asfalt-dark.png');
   background-repeat: no-repeat; background-position: center; background-size: cover;
   @apply bg-gray-100 w-[100%] sm:w-[90%] h-30 sm:h-40 lg:w-80 md:h-50 rounded-4xl px-4 py-4 border-8 border-gray-200
   shadow-md shadow-foreground place-content-center place-items-start relative hover:border-neutral-400
@@ -372,7 +448,7 @@ p{
   @apply w-[90%] place-items-center
 }
 .footer-foot div:nth-child(1) .logo-custom{
-  background-image: url('../../public/pic/asfalt-dark.png');
+  background-image: url('/pic/asfalt-dark.png');
   background-repeat: no-repeat; background-position: center; background-size: cover;
   @apply w-50 md:w-90 lg:w-140 h-fit hover:rotate-45 transition ease-in-out delay-300 
   mt-[2rem] mb-[5rem]
@@ -393,7 +469,7 @@ p{
   @apply size-6 lg:size-10
 }
 .footer-foot div:nth-child(2) h6{
-  background-image: url('../../public/pic/asfalt-dark.png');
+  background-image: url('/pic/asfalt-dark.png');
   background-repeat: no-repeat; background-position: center; background-size: cover;
   @apply w-[90%] h-0.5 md:h-1 lg:h-2 bg-gray-50 rounded-lg mt-[1.5rem] mb-[2rem]
 }
