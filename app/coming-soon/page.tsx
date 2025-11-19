@@ -18,7 +18,7 @@ export default function ComingSoonPage() {
               Coming Soon
             </h1>
             <p className="text-lg text-muted-foreground mb-8">
-              We're working hard to bring you ZyraWallet, ZyraDEX, and the complete Zyrachain ecosystem. Stay tuned!
+              We&apos;re working hard to bring you ZyraWallet, ZyraDEX, and the complete Zyrachain ecosystem. Stay tuned!
             </p>
           </div>
 
@@ -26,11 +26,11 @@ export default function ComingSoonPage() {
             <div className="flex items-center gap-3 mb-4">
               <Rocket className="text-primary" size={24} />
               <h2 className="text-xl font-semibold text-foreground">
-                What's Next?
+                What&apos;s Next?
               </h2>
             </div>
             <p className="text-muted-foreground mb-6">
-              We're building the future of decentralized finance on Pi Network. Join our community to stay updated on our progress 
+              We&apos;re building the future of decentralized finance on Pi Network. Join our community to stay updated on our progress 
               with ZyraWallet, ZyraDEX, and $Zyra token.
             </p>
             

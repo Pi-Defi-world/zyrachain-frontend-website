@@ -185,7 +185,7 @@ export default function Security() {
 
           <div className="grid md:grid-cols-2 gap-12">
             <div>
-              <h3 className="text-xl font-semibold text-foreground mb-6 text-green-600">Do's</h3>
+              <h3 className="text-xl font-semibold text-foreground mb-6 text-green-600">Do&apos;s</h3>
               <ul className="space-y-4">
                 <li className="flex items-start gap-3">
                   <CheckCircle size={20} className="text-green-600 flex-shrink-0 mt-1" />
@@ -211,7 +211,7 @@ export default function Security() {
             </div>
 
             <div>
-              <h3 className="text-xl font-semibold text-foreground mb-6 text-red-600">Don'ts</h3>
+              <h3 className="text-xl font-semibold text-foreground mb-6 text-red-600">Don&apos;ts</h3>
               <ul className="space-y-4">
                 <li className="flex items-start gap-3">
                   <Shield size={20} className="text-red-600 flex-shrink-0 mt-1" />

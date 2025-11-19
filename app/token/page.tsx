@@ -2,7 +2,6 @@ import { Header } from "@/components/global/header"
 import { Footer } from "@/components/global/footer"
 import { Coins, TrendingUp, Users, Zap, Lock, BarChart3 } from "lucide-react"
 import Image from "next/image"
-import zyracoinPic from "@public/pic/zyracoin-pic.png"
 import zyracoin from "@public/pic/zyracoin.png"
 import Link from "next/link"
 

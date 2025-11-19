@@ -31,6 +31,9 @@ function genId() {
 
 type ActionType = typeof actionTypes
 
+// eslint-disable-next-line @typescript-eslint/no-unused-vars
+const _actionTypes = actionTypes
+
 type Action =
   | {
       type: ActionType['ADD_TOAST']
@@ -155,7 +158,7 @@ function toast({ ...props }: Toast) {
       ...props,
       id,
       open: true,
-      onOpenChange: (open) => {
+      onOpenChange: (open: boolean) => {
         if (!open) dismiss()
       },
     },

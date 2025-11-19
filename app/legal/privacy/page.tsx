@@ -14,7 +14,7 @@ export default function PrivacyPage() {
             <section>
               <h2 className="text-2xl font-bold text-foreground mb-4">1. Introduction</h2>
               <p className="text-muted-foreground">
-                Zyrachain ("we," "us," "our," or "Company") is committed to protecting your privacy. This Privacy
+                Zyrachain (&quot;we,&quot; &quot;us,&quot; &quot;our,&quot; or &quot;Company&quot;) is committed to protecting your privacy. This Privacy
                 Policy explains how we collect, use, disclose, and safeguard your information when you visit our website
                 and use our services including ZyraWallet, ZyraDEX, and other Zyrachain products.
               </p>

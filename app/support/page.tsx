@@ -115,7 +115,7 @@ export default function SupportPage() {
 
               <div className="bg-amber-50 border border-amber-200 rounded-lg p-4 mb-6">
                 <p className="text-sm text-amber-900">
-                  <strong>Important:</strong> Make sure you're sending Pi from your Pi Wallet. Double-check the wallet
+                  <strong>Important:</strong> Make sure you&apos;re sending Pi from your Pi Wallet. Double-check the wallet
                   address to ensure your donation reaches us safely.
                 </p>
               </div>
@@ -126,7 +126,7 @@ export default function SupportPage() {
                 </p>
                 <ol className="list-decimal list-inside space-y-2 ml-2">
                   <li>Open your Pi Wallet application</li>
-                  <li>Select "Send" or "Transfer"</li>
+                  <li>Select &quot;Send&quot; or &quot;Transfer&quot;</li>
                   <li>Paste the Pi wallet address above</li>
                   <li>Enter the amount of Pi you wish to donate</li>
                   <li>Confirm the transaction</li>
@@ -138,7 +138,7 @@ export default function SupportPage() {
             <div className="mt-12 p-6 bg-primary/5 border border-primary/20 rounded-lg">
               <h3 className="font-semibold text-foreground mb-3">Thank You!</h3>
               <p className="text-foreground/70 mb-4">
-                We're deeply grateful for your support. Every contribution helps us build a more stable and prosperous
+                We&apos;re deeply grateful for your support. Every contribution helps us build a more stable and prosperous
                 future for the Pi Network ecosystem.
               </p>
               <Link

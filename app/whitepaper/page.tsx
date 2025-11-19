@@ -19,7 +19,7 @@ export default function WhitepaperPage() {
               Zyrachain Whitepaper
             </h1>
             <p className="text-xl text-muted-foreground mb-8">
-              Learn about Zyrachain's vision, technology, and roadmap for building the future of decentralized finance on Pi Network.
+              Learn about Zyrachain&apos;s vision, technology, and roadmap for building the future of decentralized finance on Pi Network.
             </p>
             <div className="flex flex-col sm:flex-row gap-4 justify-center">
               <Link 
@@ -90,7 +90,7 @@ export default function WhitepaperPage() {
                   <h3 className="text-lg font-semibold text-foreground mb-2">Built on Pi Network</h3>
                   <p className="text-muted-foreground">
                     Zyrachain leverages the Pi Network blockchain, providing fast, secure, and scalable infrastructure for 
-                    decentralized applications. The Pi Network's growing ecosystem of 55+ million users provides a massive 
+                    decentralized applications. The Pi Network&apos;s growing ecosystem of 55+ million users provides a massive 
                     addressable market for Zyrachain products.
                   </p>
                 </div>

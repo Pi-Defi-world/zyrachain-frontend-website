@@ -6,10 +6,6 @@ import { useTranslations } from 'next-intl'
 import zLogoCustom from "@public/pic/z-logo-custom.png"
 import tl from "@public/pic/uil-telegram.png"
 import xl from "@public/pic/uil-tumblr-square.png"
-import ll from "@public/pic/uil-linkedin.png"
-import gl from "@public/pic/uil-github.png"
-import ml from "@public/pic/uil-medium-m.png"
-import bl from "@public/pic/uil-book-alt.png"
 
 export function Footer() {
   const currentYear = new Date().getFullYear()

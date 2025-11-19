@@ -15,7 +15,7 @@ export default function About() {
               About Zyrachain
             </h1>
             <p className="text-xl text-muted-foreground mb-8">
-              We're building the future of decentralized finance on Pi Network. Zyrachain is the foundation chain of 
+              We&apos;re building the future of decentralized finance on Pi Network. Zyrachain is the foundation chain of 
               the Zyra ecosystem, designed to power and connect all Zyra products including ZyraWallet, ZyraDEX, and $Zyra token.
             </p>
           </div>
@@ -86,7 +86,7 @@ export default function About() {
               </div>
               <h3 className="text-xl font-semibold text-foreground mb-3">Community</h3>
               <p className="text-muted-foreground">
-                We're committed to building with and for our community, listening to feedback and evolving together.
+                We&apos;re committed to building with and for our community, listening to feedback and evolving together.
               </p>
             </div>
           </div>

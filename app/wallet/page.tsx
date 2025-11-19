@@ -1,7 +1,6 @@
 import { Header } from "@/components/global/header"
 import { Footer } from "@/components/global/footer"
 import { Shield, Wallet, Zap, Lock, Download } from "lucide-react"
-import { useTranslations } from 'next-intl'
 import { getTranslations } from 'next-intl/server'
 import Image from "next/image"
 import zyrawalletPic from "@public/pic/zyrawallet-pic.png"

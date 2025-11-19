@@ -1,6 +1,6 @@
 import { Header } from "@/components/global/header"
 import { Footer } from "@/components/global/footer"
-import { CheckCircle, Circle } from "lucide-react"
+import { Circle } from "lucide-react"
 
 export default function RoadmapPage() {
   return (

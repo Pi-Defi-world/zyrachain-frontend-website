@@ -1,6 +1,6 @@
 import { Header } from "@/components/global/header"
 import { Footer } from "@/components/global/footer"
-import { Mail, Phone, MapPin, MessageSquare } from "lucide-react"
+import { Mail, Phone, MapPin } from "lucide-react"
 
 export default function ContactPage() {
   return (
@@ -11,8 +11,8 @@ export default function ContactPage() {
           <div className="text-center mb-16">
             <h1 className="text-5xl font-bold text-foreground mb-6 text-balance">Get In Touch</h1>
             <p className="text-xl text-muted-foreground max-w-2xl mx-auto text-balance">
-              Have questions about Zyrachain, ZyraWallet, ZyraDEX, or $Zyra token? We'd love to hear from you. 
-              Send us a message and we'll respond as soon as possible.
+              Have questions about Zyrachain, ZyraWallet, ZyraDEX, or $Zyra token? We&apos;d love to hear from you. 
+              Send us a message and we&apos;ll respond as soon as possible.
             </p>
           </div>
 
@@ -22,7 +22,7 @@ export default function ContactPage() {
               <Mail className="w-12 h-12 text-primary mx-auto mb-4" />
               <h3 className="text-lg font-bold text-foreground mb-2">Email</h3>
               <p className="text-muted-foreground">contact@zyrachain.com</p>
-              <p className="text-sm text-muted-foreground mt-2">We'll get back to you within 24 hours</p>
+              <p className="text-sm text-muted-foreground mt-2">We&apos;ll get back to you within 24 hours</p>
             </div>
             <div className="bg-card border border-border rounded-xl p-8 text-center">
               <Phone className="w-12 h-12 text-primary mx-auto mb-4" />
