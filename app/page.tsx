@@ -203,7 +203,7 @@ export default function Home() {
             </ul>
           </div>
           <span></span>
-          <div style={{ display: 'flex', alignItems: 'center', gap: '0.5rem' }}>
+          <div className="flex items-center gap-2">
             <Link href="/whitepaper" className="desktop-whitepaper-btn">
               <button>
                 <p>Whitepaper</p>
@@ -240,7 +240,7 @@ export default function Home() {
           <MotionWrapper>
             <div className="banner-img">
               <div>
-                <h1>The automated chain network on Pi</h1>
+                <h1>The Decentralized Ecosystem on Pi</h1>
               </div>
               <Image className={"middle-pic"} src={middleImg} alt="middle logo pic 1" />
               <div>
@@ -255,8 +255,8 @@ export default function Home() {
           </MotionWrapper>
 
           <MotionWrapper>
-            <div className="vision-mission" style={{ padding: '2rem 0' }}>
-              <h2 style={{ marginBottom: '2rem', textAlign: 'center' }}>Explore Zyrachain</h2>
+            <div className="vision-mission">
+              <h2>Explore Zyrachain</h2>
               <div className="explore-nav-grid">
                 <Link href="/wallet" className="explore-nav-btn">
                   <p>ZyraWallet</p>
@@ -331,7 +331,7 @@ export default function Home() {
               <div>
                 <span>
                   <h4>Total User</h4>
-                  <h3>100,000 +</h3>
+                  <h3>00,000 +</h3>
                 </span>
                 <span>
                   <h4>Products</h4>
@@ -339,11 +339,11 @@ export default function Home() {
                 </span>
                 <span>
                   <h4>Market Capitalization</h4>
-                  <h3>2 billion +</h3>
+                  <h3>0 billion +</h3>
                 </span>
                 <span>
                   <h4>Wallets Downloads</h4>
-                  <h3>2 million +</h3>
+                  <h3>0 million +</h3>
                 </span>
               </div>
             </div>
