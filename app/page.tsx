@@ -455,8 +455,8 @@ export default function Home() {
                 <span>
                   <Image className={"team-pic"} src={teamPic1} alt="team-pic-5" />
                   <article>
-                    <h6>TM</h6>
-                    <h5>Software Developer</h5>
+                    <h6>Vincent_k</h6>
+                    <h5>Designer</h5>
                   </article>
                 </span>
                 <span>

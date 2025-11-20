@@ -52,24 +52,28 @@ export default function TokenPage() {
               <h3 className="text-2xl font-bold text-foreground mb-6">Token Distribution</h3>
               <div className="space-y-4">
                 <div className="flex justify-between items-center p-4 bg-card border border-border rounded-lg">
-                  <span className="text-foreground font-medium">Community & Ecosystem</span>
-                  <span className="text-orange-400 font-bold">40%</span>
+                  <span className="text-foreground font-medium">Liquidity Pool</span>
+                  <span className="text-orange-400 font-bold">30%</span>
                 </div>
                 <div className="flex justify-between items-center p-4 bg-card border border-border rounded-lg">
                   <span className="text-foreground font-medium">Team & Advisors</span>
-                  <span className="text-orange-400 font-bold">20%</span>
-                </div>
-                <div className="flex justify-between items-center p-4 bg-card border border-border rounded-lg">
-                  <span className="text-foreground font-medium">Liquidity & Trading</span>
                   <span className="text-orange-400 font-bold">15%</span>
                 </div>
                 <div className="flex justify-between items-center p-4 bg-card border border-border rounded-lg">
-                  <span className="text-foreground font-medium">Staking Rewards</span>
-                  <span className="text-orange-400 font-bold">15%</span>
+                  <span className="text-foreground font-medium">Marketing & KOL</span>
+                  <span className="text-orange-400 font-bold">10%</span>
+                </div>
+                <div className="flex justify-between items-center p-4 bg-card border border-border rounded-lg">
+                  <span className="text-foreground font-medium">Angel Investors</span>
+                  <span className="text-orange-400 font-bold">10%</span>
+                </div>
+                <div className="flex justify-between items-center p-4 bg-card border border-border rounded-lg">
+                  <span className="text-foreground font-medium">Community Airdrop</span>
+                  <span className="text-orange-400 font-bold">5%</span>
                 </div>
                 <div className="flex justify-between items-center p-4 bg-card border border-border rounded-lg">
                   <span className="text-foreground font-medium">Treasury & Reserves</span>
-                  <span className="text-orange-400 font-bold">10%</span>
+                  <span className="text-orange-400 font-bold">30%</span>
                 </div>
               </div>
             </div>
