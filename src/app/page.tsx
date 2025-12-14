@@ -55,7 +55,8 @@ const groupImgMobile: GroupImg[] = [
 ];
 
 const menuContents = [
-  "ZyraWallet", "ZyraDex", "$Zyra Token", "Feature", "Roadmap", "Whitepaper", "About us", "Contact", "Security", "Supports" 
+  // "ZyraWallet", "ZyraDex", "$Zyra Token", "Feature", "Roadmap", "Whitepaper", "About us", "Contact", "Security", "Supports" 
+  "home", "about", "utility", "core-team", "support"
 ];
 
 const navContents = [
@@ -106,7 +107,7 @@ export default function Home() {
       return () => window.removeEventListener("resize", updateMobileStatus);
   }, []);
 
-  const [show, setShow] = useState<boolean>(true);
+  const [show, setShow] = useState<boolean | null>(true );
   const [lastScrollY, setLastScrollY] = useState(0);
 
   const controlNavbar = useCallback(() => {
@@ -117,10 +118,12 @@ export default function Home() {
       SetIsMenuActive(false);
       setShow(false); 
     } else {
-      setShow(true);
+      menuOptionClicked ? setShow(false) : setShow(true);
     }
     setLastScrollY(window.scrollY);
   }, [lastScrollY]);
+  
+  const [menuOptionClicked, setmenuOptionClicked] = useState<boolean | null>(false);
 
   useEffect(() => {
     window.addEventListener("scroll", controlNavbar);
@@ -131,7 +134,6 @@ export default function Home() {
   const [countOptionModeClicked, setCountOptionModeClicked] = useState<number>(0);
 
   const modeLogoTextArray = [
-
     {
       name: "light mode",
       logo: <svg xmlns="http://www.w3.org/2000/svg" height="24px" viewBox="0 -960 960 960" width="24px" fill="#FFFFFF"><path d="M480-360q50 0 85-35t35-85q0-50-35-85t-85-35q-50 0-85 35t-35 85q0 50 35 85t85 35Zm0 80q-83 0-141.5-58.5T280-480q0-83 58.5-141.5T480-680q83 0 141.5 58.5T680-480q0 83-58.5 141.5T480-280ZM200-440H40v-80h160v80Zm720 0H760v-80h160v80ZM440-760v-160h80v160h-80Zm0 720v-160h80v160h-80ZM256-650l-101-97 57-59 96 100-52 56Zm492 496-97-101 53-55 101 97-57 59Zm-98-550 97-101 59 57-100 96-56-52ZM154-212l101-97 55 53-97 101-59-57Zm326-268Z"/></svg>,
@@ -185,6 +187,18 @@ export default function Home() {
   const optionLangClicked = (lang: string) => {
     setOptionSelected(lang)
     langBtnclick();
+  }
+
+  const scrollToSection = (id: string) => {
+    setmenuOptionClicked(prev => !prev);
+    handleMenu();
+      
+    const element = document.getElementById(id);
+    const yOffSet = id === "home" ? -240 : -150;
+    const y = element!.getBoundingClientRect().top + window.pageYOffset + yOffSet;
+    window.scrollTo({top: y, behavior: "smooth"});
+
+    setmenuOptionClicked(null);
   }
 
   return (
@@ -257,7 +271,8 @@ export default function Home() {
             {
               menuContents.map((item) => (
                 <>
-                  <li onClick={handleMenu}>
+                  {/* <li onClick={handleMenu}> */}
+                  <li onClick={() => scrollToSection(item)}>
                     <p>{item}</p>
                   </li>
                 </>
@@ -312,7 +327,7 @@ export default function Home() {
           </motion.div> 
 
           <MotionWrapper>
-            <div className="banner-img">
+            <div id="home" className="banner-img">
               <div>
                 <h1>The automated chain network on Pi</h1>
               </div>
@@ -327,7 +342,7 @@ export default function Home() {
           </MotionWrapper>
 
           <MotionWrapper>
-            <div className="vision-mission">
+            <div id="vision-mission" className="vision-mission">
               <h2>Vision and Mission</h2>
               <div>
                 <article>
@@ -360,7 +375,7 @@ export default function Home() {
           </MotionWrapper>
 
           <MotionWrapper>
-            <div className="eco-system">
+            <div id="eco-system" className="eco-system">
               <h2>Eco-system</h2>
               <div>
                 <span>
@@ -384,7 +399,7 @@ export default function Home() {
           </MotionWrapper>
 
           <MotionWrapper>
-            <div className="vision-mission">
+            <div id="about" className="vision-mission">
               <h2>About Zyrachain</h2>
               <div>
                 <article>
@@ -422,7 +437,7 @@ export default function Home() {
           </MotionWrapper>
 
           <MotionWrapper>
-            <div className="utility-part">
+            <div id="utility" className="utility-part">
               <h2>zyrachain utilities</h2>
               <p>
                 ZyraChain utilities form the foundational layer of the network, delivering essential 
@@ -457,7 +472,7 @@ export default function Home() {
           </MotionWrapper>
 
           <MotionWrapper>
-            <div className="core-team">
+            <div id="core-team" className="core-team">
               <h2>Core team</h2>
               <p>
                 ZyraChain is built and guided by a committed team of engineers, researchers, 
@@ -530,7 +545,7 @@ export default function Home() {
           </MotionWrapper>
 
           <MotionWrapper>
-            <div className="support">
+            <div id="support" className="support">
               <h2>supports</h2>
               <div>
                 <span>
