@@ -55,12 +55,15 @@ const groupImgMobile: GroupImg[] = [
 ];
 
 const menuContents = [
-  // "ZyraWallet", "ZyraDex", "$Zyra Token", "Feature", "Roadmap", "Whitepaper", "About us", "Contact", "Security", "Supports" 
   "home", "about", "utility", "core-team", "support"
 ];
 
 const navContents = [
   "Wallet", "Dex", "$Zyra", "RM", "Feature"
+];
+
+const exploreContents = [
+  "ZyraWallet", "ZyraDex", "$Zyra Token", "Feature", "Roadmap", "Whitepaper", "About us", "Contact", "Security", "Supports" 
 ];
 
 export default function Home() {
@@ -532,7 +535,7 @@ export default function Home() {
               <h2>Explore Zyrachain</h2>
               <div>
                 {
-                  menuContents.map((item) => (
+                  exploreContents.map((item) => (
                     <>
                       <span>
                         <h4>{item}</h4>
