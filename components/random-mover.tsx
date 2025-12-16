@@ -1,5 +1,5 @@
 import { motion, useAnimation } from "framer-motion";
-import stratalogo from "../../../public/pic/bg-strata-logo.png";
+import stratalogo from "@/public/pic/bg-strata-logo.png";
 import { useEffect, useRef } from "react";
 import Image from "next/image";
 const MotionImage = motion.create(Image);
@@ -13,8 +13,10 @@ export default function RandomMover(){
 
     if (!container) return;
 
+    let isMounted = true;
+
     const moveRandomly = async () => {
-      while (true) {
+      while (isMounted) {
         const containerWidth = container.clientWidth;
         const containerHeight = container.clientHeight;
 
@@ -22,15 +24,27 @@ export default function RandomMover(){
         const x = Math.random() * (containerWidth - 1);
         const y = Math.random() * (containerHeight - 1);
 
-        await controls.start({
-          x,
-          y,
-          transition: { duration: 2, ease: "linear" },
-        });
+        if (isMounted) {
+          await controls.start({
+            x,
+            y,
+            transition: { duration: 2, ease: "linear" },
+          });
+        }
       }
     };
 
-    moveRandomly();
+    // Use setTimeout to ensure component is fully mounted
+    const timeoutId = setTimeout(() => {
+      if (isMounted) {
+        moveRandomly();
+      }
+    }, 0);
+
+    return () => {
+      isMounted = false;
+      clearTimeout(timeoutId);
+    };
   }, [controls]);
 
 
